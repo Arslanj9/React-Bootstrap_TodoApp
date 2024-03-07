@@ -1,7 +1,7 @@
 const AddTodo = () => {
   return (
     <>
-      <div class="row mx-5">
+      <div class="row container mt-2 mx-5">
         <div class="col-6">
           <input type="text" placeholder="Enter Todo" />
         </div>
