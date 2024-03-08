@@ -15,6 +15,10 @@ const App = () => {
     {
       name: "Have Dinner",
       date: "3/3/2024"
+    },
+    {
+      name: "Go for a walk",
+      date: "2/5/2024"
     }
   ];
 
