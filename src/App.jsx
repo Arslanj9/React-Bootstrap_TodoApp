@@ -1,22 +1,30 @@
-import AppName from './components/AppName'
-import AddTodo from './components/AddTodo';
-import TodoItem from './components/TodoItem';
+import AppName from "./components/AppName";
+import AddTodo from "./components/AddTodo";
+import TodoItems from "./components/TodoItems";
 
 const App = () => {
+  let items = [
+    {
+      name: "Buy Milk",
+      date: "23/3/2024"
+    }, 
+    {
+      name: "Go to Gym",
+      date: "13/2/2024"
+    },
+    {
+      name: "Have Dinner",
+      date: "3/3/2024"
+    }
+  ];
+
   return (
     <center>
       <AppName />
       <AddTodo />
-      
-      <TodoItem todoName="Buy Milk" todoDate="4/2/2023" />
-      <TodoItem todoName="Go for run" todoDate="5/2/2023" />
-      <TodoItem todoName="Buy Food" todoDate="5/2/2023" />
-      <TodoItem todoName="Go to University" todoDate="5/2/2023" />
-      <TodoItem todoName="Have a good day" todoDate="5/2/2023" />
-
-      
+      <TodoItems items={items} />
     </center>
   );
-}
+};
 
 export default App;
