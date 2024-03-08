@@ -1,3 +1,5 @@
+import styles from './AddTodo.module.css'
+
 const AddTodo = () => {
   return (
     <>
@@ -9,7 +11,7 @@ const AddTodo = () => {
           <input type="date" />
         </div>
         <div class="col-2">
-          <button type="button" className="btn btn-success">
+          <button type="button" className={`${styles.AddBtn} btn btn-success`}>
             Add
           </button>
         </div>

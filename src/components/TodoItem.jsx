@@ -1,15 +1,14 @@
-const TodoItem1 = (props) => {
+import styles from './TodoItem.module.css'
 
-  let todoName = ""
-  let todoDate = "23/4/2024" 
+const TodoItem1 = ({todoName, todoDate}) => {
 
   return (
     <>
       <div class="row container mt-2 mx-5">
-        <div class="col-6">{props.todoName}</div>
-        <div class="col-4">{props.todoDate}</div>
+        <div class="col-6">{todoName}</div>
+        <div class="col-4">{todoDate}</div>
         <div class="col-2">
-          <button type="button" className="btn btn-danger">
+          <button type="button" className={`${styles.deleteBtn} btn btn-danger`}>
             Delete
           </button>
         </div>
