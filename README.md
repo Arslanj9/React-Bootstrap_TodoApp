@@ -5,3 +5,4 @@ Concepts used in the project:
 2. Bootstrap
 3. Props
 4. Css Modular approach --> .module.css
+5. Map method
