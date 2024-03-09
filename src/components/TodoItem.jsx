@@ -2,8 +2,10 @@ import styles from './TodoItem.module.css'
 
 const TodoItem1 = ({todoName, todoDate}) => {
 
-  let itemDelete = (todoName) => {
+  let itemDelete = (event) => {
     console.log(`${todoName} deleted`)
+    console.log(event)
+
   }
 
   return (
@@ -15,7 +17,7 @@ const TodoItem1 = ({todoName, todoDate}) => {
           <button 
             type="button" 
             className={`${styles.deleteBtn} btn btn-danger`}
-            onClick={() => itemDelete(todoName)}
+            onClick={(event) => itemDelete(event)}
           >
             Delete
           </button>
