@@ -3,7 +3,7 @@ import styles from './AddTodo.module.css'
 const AddTodo = () => {
   return (
     <>
-      <div className="row container mt-2 mx-5">
+      <div className="row container mt-2 text-center">
         <div className="col-6">
           <input type="text" placeholder="Enter Todo" />
         </div>

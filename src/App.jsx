@@ -1,6 +1,7 @@
 import AppName from "./components/AppName";
 import AddTodo from "./components/AddTodo";
 import TodoItems from "./components/TodoItems";
+import Container from "./components/Container"
 
 const App = () => {
   let items = [
@@ -15,19 +16,15 @@ const App = () => {
     {
       name: "Have Dinner",
       date: "3/3/2024"
-    },
-    {
-      name: "Go for a walk",
-      date: "2/5/2024"
     }
   ];
 
   return (
-    <center>
+    <Container>
       <AppName />
       <AddTodo />
       <TodoItems items={items} />
-    </center>
+    </Container>
   );
 };
 

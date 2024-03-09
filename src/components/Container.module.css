@@ -1,0 +1,9 @@
+.containerDiv {
+    background-color: rgba(199, 251, 234, 0.793);
+    padding: 15px;
+    border: 4px solid black;
+    margin: 25px;
+    border-radius: 15px;
+    width: 90%;
+    min-width: 400px;
+}

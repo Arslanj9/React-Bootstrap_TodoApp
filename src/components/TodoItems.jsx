@@ -1,8 +1,6 @@
 import TodoItem from './TodoItem'
 
 const TodoItems = ({items}) => {
-
-
   return (
     <>
       {items.map((item, index) =>  
