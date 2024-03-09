@@ -7,4 +7,4 @@ Concepts used in the project:
 4. Css Modular approach --> .module.css
 5. Map method
 6. Passing children in components --> props.children
-7. 
+7. Event Handling (onClick, onChange)
