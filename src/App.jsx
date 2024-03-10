@@ -2,9 +2,10 @@ import AppName from "./components/AppName";
 import AddTodo from "./components/AddTodo";
 import TodoItems from "./components/TodoItems";
 import Container from "./components/Container"
+import { useState } from "react";
 
 const App = () => {
-  let items = [
+  let innitialItems = [
     {
       name: "Buy Milk",
       date: "23/3/2024"
@@ -19,10 +20,17 @@ const App = () => {
     }
   ];
 
+  const [ items, setItems ] = useState(innitialItems)
+
+  const onSubmit = (todoName, todoDate) => {
+    const newTodoItems = [...items, {name: todoName, date: todoDate}]
+    setItems(newTodoItems)
+  }
+
   return (
     <Container>
       <AppName />
-      <AddTodo />
+      <AddTodo handleSubmit={onSubmit}/>
       <TodoItems items={items} />
     </Container>
   );
