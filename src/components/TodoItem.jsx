@@ -1,12 +1,6 @@
 import styles from './TodoItem.module.css'
 
-const TodoItem1 = ({todoName, todoDate}) => {
-
-  let itemDelete = (event) => {
-    console.log(`${todoName} deleted`)
-    console.log(event)
-
-  }
+const TodoItem1 = ({todoName, todoDate, handleDeleteItem}) => {
 
   return (
     <>
@@ -17,7 +11,7 @@ const TodoItem1 = ({todoName, todoDate}) => {
           <button 
             type="button" 
             className={`${styles.deleteBtn} btn btn-danger`}
-            onClick={(event) => itemDelete(event)}
+            onClick={() => handleDeleteItem(todoName)}
           >
             Delete
           </button>

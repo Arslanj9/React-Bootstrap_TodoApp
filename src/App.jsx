@@ -6,23 +6,23 @@ import WelcomeMsge from './components/WelcomeMsge'
 import { useState } from "react"; 
 
 const App = () => {
-  // let innitialItems = [
-  //   {
-  //     name: "Buy Milk",
-  //     date: "23/3/2024"
-  //   }, 
-  //   {
-  //     name: "Go to Gym",
-  //     date: "13/2/2024"
-  //   },
-  //   {
-  //     name: "Have Dinner",
-  //     date: "3/3/2024"
-  //   }
-  // ];
-  // const [ items, setItems ] = useState(innitialItems)
+  let innitialItems = [
+    {
+      name: "Buy Milk",
+      date: "23/3/2024"
+    }, 
+    {
+      name: "Go to Gym",
+      date: "13/2/2024"
+    },
+    {
+      name: "Have Dinner",
+      date: "3/3/2024"
+    }
+  ];
+  const [ items, setItems ] = useState(innitialItems)
 
-  const [ items, setItems ] = useState([])
+  // const [ items, setItems ] = useState([])
 
   const onSubmit = (todoName, todoDate) => {
   
@@ -33,9 +33,10 @@ const App = () => {
     setItems(newTodoItems)
   }
 
-  // const handleDelete = (todoName) => {
-    
-  // }
+  const handleDeleteItem = (todoName) => {
+    const newItems = items.filter(obj => obj.name !== todoName)
+    setItems(newItems) 
+  }
 
   
 
@@ -43,9 +44,12 @@ const App = () => {
     <Container>
       <AppName />
       <AddTodo handleSubmit={onSubmit}/>
-      {/* <TodoItems items={items} />
-      <WelcomeMsge /> */}
-      { items.length == 0 ? <WelcomeMsge /> : <TodoItems items={items}/>} 
+
+      { items.length == 0 ? <WelcomeMsge /> : <TodoItems items={items} handleDeleteItem={handleDeleteItem}/>} 
+      {/* We can also achieve same results by this method given below */}
+      {/* --------- Logical AND operator --------- */}
+      {/* { items.length == 0 && <WelcomeMsge/> }
+      <TodoItems items={items} /> */}
     </Container>
   );
 };
