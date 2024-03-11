@@ -1,7 +1,9 @@
+
+
 const WelcomeMsge = () => {
     return (
         <>
-            <h1>Welcome to the App</h1>
+            <h3 className="text-center m-3 text-uppercase text-success">Welcome to the App</h3>
         </>
     )
 }
