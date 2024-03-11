@@ -10,3 +10,4 @@ Concepts used in the project:
 7. Event Handling (onClick, onChange, onKeyDown)
 8. useState
 9. Spread operator
+10. Conditional ternary operator ( ? : )
