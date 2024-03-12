@@ -38,14 +38,16 @@ const App = () => {
     setItems(newItems) 
   }
 
-  
+  const handleEdit = (todoName, newText) => {
+    setItems((prevTodos) => prevTodos.map((todo) => todo.name == todoName ? {...todo, name: newText} : todo))
+  }
 
   return (
     <Container>
       <AppName />
       <AddTodo handleSubmit={onSubmit}/>
 
-      { items.length == 0 ? <WelcomeMsge /> : <TodoItems items={items} handleDeleteItem={handleDeleteItem}/>} 
+      { items.length == 0 ? <WelcomeMsge /> : <TodoItems items={items} handleDeleteItem={handleDeleteItem} handleEdit={handleEdit}/>} 
       {/* We can also achieve same results by this method given below */}
       {/* --------- Logical AND operator --------- */}
       {/* { items.length == 0 && <WelcomeMsge/> }

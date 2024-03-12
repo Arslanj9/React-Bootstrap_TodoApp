@@ -1,6 +1,6 @@
 import TodoItem from './TodoItem'
 
-const TodoItems = ({items, handleDeleteItem}) => {
+const TodoItems = ({items, handleDeleteItem, handleEdit}) => {
   return (
     <>
       {items.map((item, index) =>  
@@ -9,6 +9,7 @@ const TodoItems = ({items, handleDeleteItem}) => {
           todoName={item.name} 
           todoDate={item.date}
           handleDeleteItem={handleDeleteItem}
+          handleEdit={handleEdit}
         />
       )}
     </>
