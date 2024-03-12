@@ -11,3 +11,4 @@ Concepts used in the project:
 8. useState
 9. Spread operator
 10. Conditional ternary operator ( ? : )
+11. Delete button functioanlity (filter javascript method)
