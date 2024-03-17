@@ -6,23 +6,23 @@ import WelcomeMsge from './components/WelcomeMsge'
 import { useState } from "react"; 
 
 const App = () => {
-  let innitialItems = [
-    {
-      name: "Buy Milk",
-      date: "23/3/2024"
-    }, 
-    {
-      name: "Go to Gym",
-      date: "13/2/2024"
-    },
-    {
-      name: "Have Dinner",
-      date: "3/3/2024"
-    }
-  ];
-  const [ items, setItems ] = useState(innitialItems)
+  // let innitialItems = [
+  //   {
+  //     name: "Buy Milk",
+  //     date: "23/3/2024"
+  //   }, 
+  //   {
+  //     name: "Go to Gym",
+  //     date: "13/2/2024"
+  //   },
+  //   {
+  //     name: "Have Dinner",
+  //     date: "3/3/2024"
+  //   }
+  // ];
+  // const [ items, setItems ] = useState(innitialItems)
 
-  // const [ items, setItems ] = useState([])
+  const [ items, setItems ] = useState([])
 
   const onSubmit = (todoName, todoDate) => {
   

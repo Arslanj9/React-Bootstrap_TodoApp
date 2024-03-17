@@ -1,28 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './AddTodo.module.css'
 import { IoMdAddCircle } from "react-icons/io";
 
-
 const AddTodo = ({ handleSubmit }) => {
 
-  const [ todoName, setTodoName ] = useState("")
-  const [ todoDate, setTodoDate ] = useState("")
-
-  const handleName = (e) => {
-    setTodoName(e.target.value)
-  }
-
-  const handleDate = (e) => {
-    setTodoDate(e.target.value)
-  }
+  const todoNameElement = useRef()
+  const todoDateElement = useRef()
 
   const handleAddBtn = () => {
-    if(todoName == "" || todoDate == ""){
+    if(todoNameElement == "" || todoDateElement == ""){
       console.log(`Please enter something`)
     }else {
-      handleSubmit(todoName, todoDate)
-      setTodoName("")
-      setTodoDate("")
+      handleSubmit(todoNameElement.current.value, todoDateElement.current.value)
+      todoNameElement.current.value = "";
+      todoDateElement.current.value = "";
     }
   }
 
@@ -32,16 +23,14 @@ const AddTodo = ({ handleSubmit }) => {
         <div className="col-6">
           <input 
             type="text" 
-            placeholder="Enter Todo" 
-            value={todoName}
-            onChange={handleName}
+            placeholder="Enter Todo"
+            ref={todoNameElement}
           />
         </div>
         <div className="col-4">
           <input 
             type="date" 
-            value={todoDate}
-            onChange={handleDate}
+            ref={todoDateElement}
           />
         </div>
         <div className="col-2">
