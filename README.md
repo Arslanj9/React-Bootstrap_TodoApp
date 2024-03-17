@@ -13,3 +13,4 @@ Concepts used in the project:
 10. Conditional ternary operator ( ? : )
 11. Delete button functioanlity (filter javascript method)
 12. Edit Button functionality
+13. React Icons Library
