@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import styles from './AddTodo.module.css'
+import { IoMdAddCircle } from "react-icons/io";
+
 
 const AddTodo = ({ handleSubmit }) => {
 
@@ -48,7 +50,7 @@ const AddTodo = ({ handleSubmit }) => {
             className={`${styles.AddBtn} btn btn-success`}
             onClick={handleAddBtn}
           >
-            Add
+            <IoMdAddCircle />
           </button>
         </div>
       </div>
