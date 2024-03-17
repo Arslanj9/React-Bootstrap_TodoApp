@@ -12,3 +12,4 @@ Concepts used in the project:
 9. Spread operator
 10. Conditional ternary operator ( ? : )
 11. Delete button functioanlity (filter javascript method)
+12. Edit Button functionality
