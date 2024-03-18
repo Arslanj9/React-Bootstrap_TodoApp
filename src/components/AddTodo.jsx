@@ -1,11 +1,15 @@
-import { useState, useEffect, useRef } from 'react';
+import { useRef, useContext } from 'react';
 import styles from './AddTodo.module.css'
 import { IoMdAddCircle } from "react-icons/io";
+import {todoItemContext} from '../store/todoItemContext'
 
-const AddTodo = ({ handleSubmit }) => {
+const AddTodo = () => {
 
   const todoNameElement = useRef()
   const todoDateElement = useRef()
+
+  const submitFromContext = useContext(todoItemContext)
+  const handleSubmit = submitFromContext.addItem
 
   const handleAddBtn = () => {
     if(todoNameElement == "" || todoDateElement == ""){

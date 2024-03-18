@@ -47,19 +47,20 @@ const App = () => {
   };
 
   return (
-    <todoItemContext.Provider value={items}>
+    <todoItemContext.Provider 
+      value={{
+        allItems: items, 
+        deleteItem: handleDeleteItem, 
+        addItem: onSubmit,
+        editItem: handleEdit
+      }}
+    >
       <Container>
         <AppName />
-        <AddTodo handleSubmit={onSubmit} />
+        <AddTodo />
 
-        {items.length == 0 ? (
-          <WelcomeMsge />
-        ) : (
-          <TodoItems
-            handleDeleteItem={handleDeleteItem}
-            handleEdit={handleEdit}
-          />
-        )}
+        {items.length == 0 ? (<WelcomeMsge />) : (<TodoItems />)}
+        
         {/* We can also achieve same results by this method given below */}
         {/* --------- Logical AND operator --------- */}
         {/* { items.length == 0 && <WelcomeMsge/> }

@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styles from "./TodoItem.module.css";
 import { MdDelete, MdPublishedWithChanges } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
-
-const TodoItem1 = ({ todoName, todoDate, handleDeleteItem, handleEdit }) => {
+import { todoItemContext } from '../store/todoItemContext'
+ 
+const TodoItem1 = ({ todoName, todoDate}) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(todoName);
+
+  const { deleteItem, editItem } = useContext(todoItemContext)
 
   const handleEditBtn = () => {
     setIsEditing(!isEditing);
@@ -13,7 +16,7 @@ const TodoItem1 = ({ todoName, todoDate, handleDeleteItem, handleEdit }) => {
 
   const handleSaveBtn = () => {
     setIsEditing(false);
-    handleEdit(todoName, newText);
+    editItem(todoName, newText);
   };
 
   return (
@@ -44,7 +47,7 @@ const TodoItem1 = ({ todoName, todoDate, handleDeleteItem, handleEdit }) => {
               <button
                 type="button"
                 className={`${styles.deleteBtn} btn btn-danger`}
-                onClick={() => handleDeleteItem(todoName)}
+                onClick={() => deleteItem(todoName)}
               >
                 <MdDelete />
               </button>
