@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import styles from "./TodoItem.module.css";
 import { MdDelete, MdPublishedWithChanges } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
-import { todoItemContext } from '../store/todoItemContext'
+import { todoItemContext } from '../store/TodoItemContext'
  
 const TodoItem1 = ({ todoName, todoDate}) => {
   const [isEditing, setIsEditing] = useState(false);

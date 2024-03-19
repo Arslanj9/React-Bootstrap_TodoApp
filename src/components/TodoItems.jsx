@@ -1,6 +1,6 @@
 import TodoItem from './TodoItem'
 import { useContext } from 'react';
-import { todoItemContext } from '../store/todoItemContext';
+import { todoItemContext } from '../store/TodoItemContext';
 
 
 const TodoItems = () => {

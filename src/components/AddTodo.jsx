@@ -1,7 +1,7 @@
 import { useRef, useContext } from 'react';
 import styles from './AddTodo.module.css'
 import { IoMdAddCircle } from "react-icons/io";
-import {todoItemContext} from '../store/todoItemContext'
+import {todoItemContext} from '../store/TodoItemContext'
 
 const AddTodo = () => {
 
