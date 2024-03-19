@@ -3,7 +3,7 @@ import AddTodo from "./components/AddTodo";
 import TodoItems from "./components/TodoItems";
 import Container from "./components/Container";
 import WelcomeMsge from "./components/WelcomeMsge";
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 import { todoItemContext } from "./store/todoItemContext";
 
 
@@ -30,10 +30,17 @@ const itemsReducer = (itemsState, action) => {
       let formattedDate = dateParts[2] + "/" + dateParts[1] + "/" + dateParts[0];
   
       newItemsState = [...itemsState, { name: action.payload.name, date: formattedDate }];
-      console.log(newItemsState)
-    }else if (action.type === 'DELETE_ITEM') {
+      
+    } else if (action.type === 'DELETE_ITEM') {
       newItemsState = itemsState.filter((obj) => obj.name !== action.payload.name);
+
+    } else if(action.type === 'EDIT_ITEM') {
+
+    newItemsState = itemsState.map((todo) => {
+      return todo.name === action.payload.name ? {...itemsState, name: action.payload.newText, date: todo.date } : todo
+    })
     }
+
     return newItemsState;
 }
 
@@ -41,8 +48,8 @@ const App = () => {
 
   const [ itemsState, dispatchItems ] = useReducer(itemsReducer, itemsInnitialState)
 
-
   const onSubmit = (todoName, todoDate) => {
+
     const newTodoItems = {
       type: "ADD_ITEM",
       payload: {
@@ -67,12 +74,20 @@ const App = () => {
   };
 
   const handleEdit = (todoName, newText) => {
-    // setItems((prevTodos) =>
-    //   prevTodos.map((todo) =>
-    //     todo.name == todoName ? { ...todo, name: newText } : todo
-    //   )
-    // );
+
+    const editTodoItem = {
+      type: "EDIT_ITEM",
+      payload: {
+        name: todoName,
+        newText
+      }
+    }
+
+    dispatchItems(editTodoItem)
   };
+
+
+
 
   return (
     <todoItemContext.Provider 

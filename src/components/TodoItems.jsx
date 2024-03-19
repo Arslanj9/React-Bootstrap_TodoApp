@@ -6,7 +6,6 @@ import { todoItemContext } from '../store/todoItemContext';
 const TodoItems = () => {
 
   const {allItems} = useContext(todoItemContext);
-  console.log(allItems)
 
   return (
     <>
