@@ -15,3 +15,5 @@ Concepts used in the project:
 12. Edit Button functionality
 13. React Icons Library
 14. useRef
+15. Context API (useContext hook)
+16. useReducer
