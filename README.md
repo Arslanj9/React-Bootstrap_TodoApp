@@ -17,3 +17,4 @@ Concepts used in the project:
 14. useRef
 15. Context API (useContext hook)
 16. useReducer
+17. Task Completed functionality
