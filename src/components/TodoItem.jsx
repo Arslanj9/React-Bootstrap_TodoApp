@@ -4,11 +4,12 @@ import { MdDelete, MdPublishedWithChanges } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { todoItemContext } from '../store/TodoItemContext'
  
-const TodoItem1 = ({ todoName, todoDate}) => {
+const TodoItem1 = ({ todoName, todoDate, todoCompleted }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(todoName);
+  const [newTodoCompleted, setNewTodoCompleted] = useState(true)
 
-  const { deleteItem, editItem } = useContext(todoItemContext)
+  const { deleteItem, editItem, completedItem } = useContext(todoItemContext)
 
   const handleEditBtn = () => {
     setIsEditing(!isEditing);
@@ -18,6 +19,16 @@ const TodoItem1 = ({ todoName, todoDate}) => {
     setIsEditing(false);
     editItem(todoName, newText);
   };
+
+  const handleCompleted = () => {
+    setNewTodoCompleted(!newTodoCompleted)
+    completedItem(todoName, newTodoCompleted)
+  }
+
+  const completedStyles = {
+    textDecoration: todoCompleted ? "line-through" : "none",
+    opacity: todoCompleted ? 0.5 : 1
+  }
 
   return (
     <>
@@ -35,7 +46,13 @@ const TodoItem1 = ({ todoName, todoDate}) => {
           </div>
         ) : (
           <div className="row container mt-2 text-center">
-            <div className="col-6">{todoName}</div>
+            <input 
+              className="col-1" 
+              style={{width: "1em", height: "1.25em", marginLeft: '60px'}} 
+              type="checkbox" 
+              onClick={handleCompleted}
+            />
+            <div className="col-5" style={completedStyles}>{todoName}</div>
             <div className="col-4">{todoDate}</div>
             <div className="col-2">
               <button

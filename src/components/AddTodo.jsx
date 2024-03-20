@@ -8,14 +8,13 @@ const AddTodo = () => {
   const todoNameElement = useRef()
   const todoDateElement = useRef()
 
-  const submitFromContext = useContext(todoItemContext)
-  const handleSubmit = submitFromContext.addItem
+  const { addItem } = useContext(todoItemContext)
 
   const handleAddBtn = () => {
     if(todoNameElement == "" || todoDateElement == ""){
       console.log(`Please enter something`)
     }else {
-      handleSubmit(todoNameElement.current.value, todoDateElement.current.value)
+      addItem(todoNameElement.current.value, todoDateElement.current.value)
       todoNameElement.current.value = "";
       todoDateElement.current.value = "";
     }

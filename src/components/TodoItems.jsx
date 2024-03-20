@@ -14,6 +14,7 @@ const TodoItems = () => {
           key={index} 
           todoName={item.name} 
           todoDate={item.date}
+          todoCompleted={item.completed}
         />
       )}
     </>
