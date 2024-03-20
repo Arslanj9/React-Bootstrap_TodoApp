@@ -4,7 +4,7 @@ import { MdDelete, MdPublishedWithChanges } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { todoItemContext } from '../store/TodoItemContext'
  
-const TodoItem1 = ({ todoName, todoDate, todoCompleted }) => {
+const TodoItem = ({ todoName, todoDate, todoCompleted }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(todoName);
   const [newTodoCompleted, setNewTodoCompleted] = useState(true)
@@ -53,7 +53,7 @@ const TodoItem1 = ({ todoName, todoDate, todoCompleted }) => {
               onClick={handleCompleted}
             />
             <div className="col-5" style={completedStyles}>{todoName}</div>
-            <div className="col-4">{todoDate}</div>
+            <div className="col-4" style={completedStyles}>{todoDate}</div>
             <div className="col-2">
               <button
                 onClick={handleEditBtn}
@@ -76,4 +76,4 @@ const TodoItem1 = ({ todoName, todoDate, todoCompleted }) => {
   );
 };
 
-export default TodoItem1;
+export default TodoItem;
